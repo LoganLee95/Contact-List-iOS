@@ -275,7 +275,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="sample-881-globe" selectedImage="sample-881-globe" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="sample-881-globe" selectedImage="sample-881-globe" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,21 +289,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vm1-ho-A1Q">
-                                <rect key="frame" x="143" y="426.5" width="128" height="43"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="qAZ-XM-Vae">
+                                <rect key="frame" x="47" y="293.5" width="320" height="309.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnr-2K-e4S">
+                                        <rect key="frame" x="119.5" y="0.0" width="81" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAy-BN-mmi">
+                                        <rect key="frame" x="0.0" y="41.5" width="320" height="216"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" link="YES"/>
+                                        </accessibility>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bcH-fy-wFF">
+                                        <rect key="frame" x="69.5" y="278.5" width="181.5" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascending Sort:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ud-KI-1jH">
+                                                <rect key="frame" x="0.0" y="0.0" width="122.5" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cxE-Mn-rXv">
+                                                <rect key="frame" x="132.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="sortDirectionChanged:" destination="Xuc-EX-Md7" eventType="valueChanged" id="9vX-mn-IHk"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vm1-ho-A1Q" firstAttribute="centerY" secondItem="omY-V3-NjW" secondAttribute="centerY" id="Xk8-VC-6C7"/>
-                            <constraint firstItem="vm1-ho-A1Q" firstAttribute="centerX" secondItem="omY-V3-NjW" secondAttribute="centerX" id="jLh-qk-MNk"/>
+                            <constraint firstItem="qAZ-XM-Vae" firstAttribute="centerY" secondItem="omY-V3-NjW" secondAttribute="centerY" id="p0B-11-yOr"/>
+                            <constraint firstItem="qAZ-XM-Vae" firstAttribute="centerX" secondItem="omY-V3-NjW" secondAttribute="centerX" id="x6u-md-1VQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ep-0q-35M"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="sample-834-bolt" selectedImage="sample-834-bolt" id="XTD-sW-Wsy"/>
+                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="gear" catalog="system" id="XTD-sW-Wsy"/>
+                    <connections>
+                        <outlet property="pckSortField" destination="ZAy-BN-mmi" id="mO7-e3-ss8"/>
+                        <outlet property="swAscending" destination="cxE-Mn-rXv" id="qye-30-vM8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7I3-XH-AaV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -322,7 +354,6 @@
                         <segue destination="DmD-IO-uGv" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Xuc-EX-Md7" kind="relationship" relationship="viewControllers" id="LuJ-Eg-cuu"/>
-                        <segue destination="yVo-sg-MBN" kind="relationship" relationship="viewControllers" id="fTp-YG-NKc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -348,25 +379,9 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="dbz-hy-C0A">
-            <objects>
-                <viewController id="yVo-sg-MBN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="57O-hG-ow7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="JkQ-SV-Pa9"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="62X-iY-gxe"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fgP-Qh-iNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-817" y="217"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="sample-834-bolt" width="26" height="28"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="sample-881-globe" width="28" height="28"/>
     </resources>
 </document>

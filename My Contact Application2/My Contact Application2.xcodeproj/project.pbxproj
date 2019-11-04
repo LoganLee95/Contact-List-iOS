@@ -18,6 +18,7 @@
 		AC0AE4532360A0C70049A440 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4522360A0C70049A440 /* ContactViewController.swift */; };
 		AC0AE4552360A0D10049A440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4542360A0D10049A440 /* MapViewController.swift */; };
 		AC0AE4572360A0DA0049A440 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4562360A0D90049A440 /* SettingsViewController.swift */; };
+		AC7B4D2C237060EA00F76FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4D2B237060EA00F76FF1 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		AC0AE4522360A0C70049A440 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		AC0AE4542360A0D10049A440 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC0AE4562360A0D90049A440 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AC7B4D2B237060EA00F76FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				AC0AE41D2360A0910049A440 /* AppDelegate.swift */,
+				AC7B4D2B237060EA00F76FF1 /* Constants.swift */,
 				AC0AE41F2360A0910049A440 /* SceneDelegate.swift */,
 				AC0AE4252360A0910049A440 /* Main.storyboard */,
 				AC0AE42B2360A0920049A440 /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 				AC0AE4532360A0C70049A440 /* ContactViewController.swift in Sources */,
 				AC0AE42A2360A0910049A440 /* My_Contact_Application2.xcdatamodeld in Sources */,
 				AC0AE4552360A0D10049A440 /* MapViewController.swift in Sources */,
+				AC7B4D2C237060EA00F76FF1 /* Constants.swift in Sources */,
 				AC0AE4202360A0910049A440 /* SceneDelegate.swift in Sources */,
 				AC0AE4572360A0DA0049A440 /* SettingsViewController.swift in Sources */,
 			);
