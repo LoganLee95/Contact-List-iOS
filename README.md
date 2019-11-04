@@ -1,2 +1,2 @@
 # Contact-List_iOS
-## A CRUD application for iOS. User defined contact list.
+## User defines contacts and application provides create, update, read, and delete functionality through Core Data.
