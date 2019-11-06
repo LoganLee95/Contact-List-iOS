@@ -67,15 +67,12 @@
                                                 <rect key="frame" x="0.0" y="98" width="394" height="34"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LxX-n6-eYb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="243" height="34"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="231" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="address-level2"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="State" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tZV-pW-Y1e">
-                                                        <rect key="frame" x="253" y="0.0" width="50" height="34"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="50" id="gGs-eU-0Hp"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="241" y="0.0" width="62" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                                     </textField>
@@ -167,7 +164,7 @@
                                                         <rect key="frame" x="286.5" y="0.0" width="107.5" height="30"/>
                                                         <state key="normal" title="Change"/>
                                                         <connections>
-                                                            <segue destination="n0x-iq-t0W" kind="show" id="shL-jR-AnC"/>
+                                                            <segue destination="n0x-iq-t0W" kind="show" identifier="segueContactDate" id="shL-jR-AnC"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -221,14 +218,13 @@
         <!--Birthdate-->
         <scene sceneID="IRn-54-axA">
             <objects>
-                <viewController title="Birthdate" id="n0x-iq-t0W" sceneMemberID="viewController">
+                <viewController title="Birthdate" id="n0x-iq-t0W" customClass="DateViewController" customModule="My_Contact_Application2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PZH-Z3-Lae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="rE0-f9-6Tu">
-                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="rE0-f9-6Tu">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
                                     <!--1970-01-01 11:00:00 +0000-->
                                 </date>
@@ -238,13 +234,20 @@
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rE0-f9-6Tu" firstAttribute="centerY" secondItem="PZH-Z3-Lae" secondAttribute="centerY" id="5UA-B6-eX3"/>
+                            <constraint firstItem="rE0-f9-6Tu" firstAttribute="centerX" secondItem="PZH-Z3-Lae" secondAttribute="centerX" id="72k-Ac-hHX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="AP4-tM-tTX"/>
                     </view>
                     <navigationItem key="navigationItem" id="1LM-LB-wO1"/>
+                    <connections>
+                        <outlet property="dtpDate" destination="rE0-f9-6Tu" id="MnV-nZ-2z3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Egb-LJ-Bhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2530" y="-317"/>
+            <point key="canvasLocation" x="2504" y="-320"/>
         </scene>
         <!--Map-->
         <scene sceneID="wg7-f3-ORb">
@@ -331,7 +334,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ep-0q-35M"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" selectedImage="gear" catalog="system" id="XTD-sW-Wsy"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="sample-834-bolt" selectedImage="sample-834-bolt" id="XTD-sW-Wsy"/>
                     <connections>
                         <outlet property="pckSortField" destination="ZAy-BN-mmi" id="mO7-e3-ss8"/>
                         <outlet property="swAscending" destination="cxE-Mn-rXv" id="qye-30-vM8"/>
@@ -381,7 +384,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="sample-834-bolt" width="26" height="28"/>
         <image name="sample-881-globe" width="28" height="28"/>
     </resources>
 </document>

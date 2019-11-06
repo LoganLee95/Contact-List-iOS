@@ -3,7 +3,6 @@
 //  My Contact Application2
 //
 //  Created by Harry Dulaney on 10/23/19.
-//  Copyright © 2019 Learning Mobile Apps. All rights reserved.
 //
 
 import UIKit
@@ -13,7 +12,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAscending: UISwitch!
     
-    let sortOrderItems: Array<String> = ["ContactName","City","Birthday"]
+    let sortOrderItems: Array<String> = ["Contact Name","City","Birthday","Email Address"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

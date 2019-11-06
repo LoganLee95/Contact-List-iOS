@@ -10,7 +10,6 @@
 		AC0AE41E2360A0910049A440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE41D2360A0910049A440 /* AppDelegate.swift */; };
 		AC0AE4202360A0910049A440 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE41F2360A0910049A440 /* SceneDelegate.swift */; };
 		AC0AE4272360A0910049A440 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0AE4252360A0910049A440 /* Main.storyboard */; };
-		AC0AE42A2360A0910049A440 /* My_Contact_Application2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4282360A0910049A440 /* My_Contact_Application2.xcdatamodeld */; };
 		AC0AE42C2360A0920049A440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC0AE42B2360A0920049A440 /* Assets.xcassets */; };
 		AC0AE42F2360A0920049A440 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0AE42D2360A0920049A440 /* LaunchScreen.storyboard */; };
 		AC0AE43A2360A0930049A440 /* My_Contact_Application2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4392360A0930049A440 /* My_Contact_Application2Tests.swift */; };
@@ -19,6 +18,8 @@
 		AC0AE4552360A0D10049A440 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4542360A0D10049A440 /* MapViewController.swift */; };
 		AC0AE4572360A0DA0049A440 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0AE4562360A0D90049A440 /* SettingsViewController.swift */; };
 		AC7B4D2C237060EA00F76FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4D2B237060EA00F76FF1 /* Constants.swift */; };
+		ACBA6BC22371112C007E0A3C /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA6BC12371112C007E0A3C /* DateViewController.swift */; };
+		ACBA6BC623712BBD007E0A3C /* ContactDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACBA6BC423712BBD007E0A3C /* ContactDataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 		AC0AE41D2360A0910049A440 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC0AE41F2360A0910049A440 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AC0AE4262360A0910049A440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AC0AE4292360A0910049A440 /* My_Contact_Application2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Contact_Application2.xcdatamodel; sourceTree = "<group>"; };
 		AC0AE42B2360A0920049A440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC0AE42E2360A0920049A440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC0AE4302360A0920049A440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		AC0AE4542360A0D10049A440 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		AC0AE4562360A0D90049A440 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AC7B4D2B237060EA00F76FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		ACBA6BC12371112C007E0A3C /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		ACBA6BC523712BBD007E0A3C /* ContactDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,13 +113,14 @@
 				AC7B4D2B237060EA00F76FF1 /* Constants.swift */,
 				AC0AE41F2360A0910049A440 /* SceneDelegate.swift */,
 				AC0AE4252360A0910049A440 /* Main.storyboard */,
+				ACBA6BC12371112C007E0A3C /* DateViewController.swift */,
 				AC0AE42B2360A0920049A440 /* Assets.xcassets */,
 				AC0AE42D2360A0920049A440 /* LaunchScreen.storyboard */,
 				AC0AE4302360A0920049A440 /* Info.plist */,
-				AC0AE4282360A0910049A440 /* My_Contact_Application2.xcdatamodeld */,
 				AC0AE4522360A0C70049A440 /* ContactViewController.swift */,
 				AC0AE4542360A0D10049A440 /* MapViewController.swift */,
 				AC0AE4562360A0D90049A440 /* SettingsViewController.swift */,
+				ACBA6BC423712BBD007E0A3C /* ContactDataModel.xcdatamodeld */,
 			);
 			path = "My Contact Application2";
 			sourceTree = "<group>";
@@ -204,7 +207,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1110;
-				ORGANIZATIONNAME = "Learning Mobile Apps";
+				ORGANIZATIONNAME = "Ethical Techniques";
 				TargetAttributes = {
 					AC0AE4192360A0910049A440 = {
 						CreatedOnToolsVersion = 11.1;
@@ -271,10 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACBA6BC22371112C007E0A3C /* DateViewController.swift in Sources */,
 				AC0AE41E2360A0910049A440 /* AppDelegate.swift in Sources */,
 				AC0AE4532360A0C70049A440 /* ContactViewController.swift in Sources */,
-				AC0AE42A2360A0910049A440 /* My_Contact_Application2.xcdatamodeld in Sources */,
 				AC0AE4552360A0D10049A440 /* MapViewController.swift in Sources */,
+				ACBA6BC623712BBD007E0A3C /* ContactDataModel.xcdatamodeld in Sources */,
 				AC7B4D2C237060EA00F76FF1 /* Constants.swift in Sources */,
 				AC0AE4202360A0910049A440 /* SceneDelegate.swift in Sources */,
 				AC0AE4572360A0DA0049A440 /* SettingsViewController.swift in Sources */,
@@ -608,13 +612,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AC0AE4282360A0910049A440 /* My_Contact_Application2.xcdatamodeld */ = {
+		ACBA6BC423712BBD007E0A3C /* ContactDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AC0AE4292360A0910049A440 /* My_Contact_Application2.xcdatamodel */,
+				ACBA6BC523712BBD007E0A3C /* ContactDataModel.xcdatamodel */,
 			);
-			currentVersion = AC0AE4292360A0910049A440 /* My_Contact_Application2.xcdatamodel */;
-			path = My_Contact_Application2.xcdatamodeld;
+			currentVersion = ACBA6BC523712BBD007E0A3C /* ContactDataModel.xcdatamodel */;
+			path = ContactDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

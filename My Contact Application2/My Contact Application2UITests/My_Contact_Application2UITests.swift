@@ -3,7 +3,6 @@
 //  My Contact Application2UITests
 //
 //  Created by Harry Dulaney on 10/23/19.
-//  Copyright © 2019 Learning Mobile Apps. All rights reserved.
 //
 
 import XCTest

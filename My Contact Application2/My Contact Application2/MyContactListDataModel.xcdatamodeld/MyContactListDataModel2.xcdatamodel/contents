@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G103" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Contact" representedClassName="Contact" syncable="YES" codeGenerationType="class">
+        <attribute name="birthday" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="cellNumber" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="contactName" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String"/>
+        <attribute name="zipcode" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Setting" representedClassName="Setting" syncable="YES" codeGenerationType="class">
+        <attribute name="sortBy" optional="YES" attributeType="String"/>
+        <attribute name="sortOrder" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Contact" positionX="-63" positionY="-18" width="128" height="178"/>
+        <element name="Setting" positionX="-45" positionY="72" width="128" height="73"/>
+    </elements>
+</model>
