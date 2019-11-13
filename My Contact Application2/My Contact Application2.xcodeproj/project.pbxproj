@@ -20,6 +20,7 @@
 		AC7B4D2C237060EA00F76FF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC7B4D2B237060EA00F76FF1 /* Constants.swift */; };
 		ACBA6BC22371112C007E0A3C /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBA6BC12371112C007E0A3C /* DateViewController.swift */; };
 		ACBA6BC623712BBD007E0A3C /* ContactDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACBA6BC423712BBD007E0A3C /* ContactDataModel.xcdatamodeld */; };
+		ACE3CCB9237BA27000F00765 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE3CCB8237BA27000F00765 /* ContactsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		AC7B4D2B237060EA00F76FF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ACBA6BC12371112C007E0A3C /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		ACBA6BC523712BBD007E0A3C /* ContactDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ContactDataModel.xcdatamodel; sourceTree = "<group>"; };
+		ACE3CCB8237BA27000F00765 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		AC0AE41C2360A0910049A440 /* My Contact Application2 */ = {
 			isa = PBXGroup;
 			children = (
+				ACE3CCB8237BA27000F00765 /* ContactsTableViewController.swift */,
 				AC0AE41D2360A0910049A440 /* AppDelegate.swift */,
 				AC7B4D2B237060EA00F76FF1 /* Constants.swift */,
 				AC0AE41F2360A0910049A440 /* SceneDelegate.swift */,
@@ -282,6 +285,7 @@
 				AC7B4D2C237060EA00F76FF1 /* Constants.swift in Sources */,
 				AC0AE4202360A0910049A440 /* SceneDelegate.swift in Sources */,
 				AC0AE4572360A0DA0049A440 /* SettingsViewController.swift in Sources */,
+				ACE3CCB9237BA27000F00765 /* ContactsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,7 +468,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.company.lma.My-Contact-Application2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.company.lma.My-Contact-Application2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

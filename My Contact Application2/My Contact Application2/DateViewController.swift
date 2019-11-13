@@ -21,10 +21,13 @@ class DateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    
+       
         // Do any additional setup after loading the view.
         let saveButton: UIBarButtonItem =
-            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(saveDate))
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save,
+                            target: self,
+                            action: #selector(saveDate))
             
         self.navigationItem.rightBarButtonItem = saveButton
         self.title = "Pick Birthday Now"
@@ -33,11 +36,15 @@ class DateViewController: UIViewController {
     
     @objc func saveDate() {
         self.delegate?.dateChanged(date: dtpDate.date)
-        self.navigationController?.popViewController(animated: true)
+        let navController = self.navigationController
+                  navController?.popViewController(animated: true)
 
         
     }
-    
+    override func didReceiveMemoryWarning() {
+           super.didReceiveMemoryWarning()
+           // Dispose of any resources that can be recreated.
+       }
 
     /*
     // MARK: - Navigation

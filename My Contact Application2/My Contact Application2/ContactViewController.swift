@@ -41,10 +41,28 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.changeEditMode(self);
         
-        let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip,
-                                         txtPhone, txtCell, txtEmail]
+        if currentContact != nil {
+               txtName.text = currentContact!.contactName
+               txtAddress.text = currentContact!.streetAddress
+               txtCity.text = currentContact!.city
+               txtState.text = currentContact!.state
+               txtZip.text = currentContact!.zipcode
+               txtPhone.text = currentContact!.phoneNumber
+               txtCell.text = currentContact!.cellNumber
+               txtEmail.text = currentContact!.email
+               let formatter = DateFormatter()
+               formatter.dateStyle = .short
+               if currentContact!.birthday != nil {
+                lblBirthdate.text = formatter.string(from: currentContact!.birthday!)
+                   
+               }
+           }
+           changeEditMode(self)
+           
+           let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip,
+           txtPhone, txtCell, txtEmail]
+
         for textField in textFields {
             textField.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)),
                                 for: UIControl.Event.editingDidEnd)
@@ -52,12 +70,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "segueContactDate") {
-        let dateController = segue.destination as! DateViewController
-        dateController.delegate = self
-        }
-    }
+
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         currentContact?.contactName = txtName.text
         currentContact?.streetAddress = txtAddress.text
@@ -151,6 +164,17 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
             self.scrollView.contentInset = contentInset
             self.scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "segueContactDate") {
+        let dateController = segue.destination as! DateViewController
+        dateController.delegate = self
+        }
+        
+      
+            }
+    
+    
     
     /*
     // MARK: - Navigation
