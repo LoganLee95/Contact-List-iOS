@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(settings.string(forKey: Constants.kSortDirectionAscending) == nil) {
             settings.set(true, forKey: Constants.kSortDirectionAscending)
         }
-        
+       
         settings.synchronize()
         NSLog("Sort field: %@", settings.string(forKey: Constants.kSortField)!)
             NSLog("Sort direction: \(settings.bool(forKey: Constants.kSortDirectionAscending))")
@@ -47,7 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
-
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation

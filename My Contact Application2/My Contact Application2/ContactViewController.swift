@@ -67,10 +67,8 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
             textField.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)),
                                 for: UIControl.Event.editingDidEnd)
         }
-        
     }
     
-
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         currentContact?.contactName = txtName.text
         currentContact?.streetAddress = txtAddress.text
@@ -128,7 +126,6 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
         changeEditMode(self)
         
         }
-
     
      func registerKeyboardNotifications() {
             NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardDidShow(notification:)),
@@ -149,7 +146,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
             let keyboardInfo = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue
             let keyboardSize = keyboardInfo.cgRectValue.size
             
-            // Get the existing contentInset for the scrollView and set the bottom property to be the height of the keyboard
+            //Get the existing contentInset for the scrollView and set the bottom property to be the height of the keyboard
             var contentInset = self.scrollView.contentInset
             contentInset.bottom = keyboardSize.height
             
@@ -173,20 +170,6 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
         
       
             }
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
-
-}
 
 
