@@ -6,6 +6,9 @@ _[For the Android Version Click Here ](https://github.com/HarryDulaney/Contact-L
 - Core Data
 - Data persistance using UserDefaults
 - Swift 5
+- CRUD
+- Application Lifecycle in iOS
+- Building UI's using XCode
 
 
 
