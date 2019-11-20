@@ -21,9 +21,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         switch sgmtMapType.selectedSegmentIndex {
         case 0:
             mapView.mapType = .standard
-        case 2:
+        case 1:
             mapView.mapType = .hybrid
-        case 3:
+        case 2:
             mapView.mapType = .satellite
         default: break
             
