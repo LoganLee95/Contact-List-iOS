@@ -28,8 +28,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         default: break
             
         }
-        
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

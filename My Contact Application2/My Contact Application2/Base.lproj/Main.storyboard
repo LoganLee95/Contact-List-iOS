@@ -325,6 +325,29 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="ZDH-dk-lx3">
                                 <rect key="frame" x="0.0" y="134" width="414" height="679"/>
                                 <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mmb-Ck-l8E">
+                                        <rect key="frame" x="15" y="310" width="215" height="110"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TsZ-Ug-8MC">
+                                                <rect key="frame" x="0.0" y="5" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="2il-Nn-vWz"/>
+                                                    <constraint firstAttribute="height" constant="100" id="gCy-QT-nFk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s4-fi-htH">
+                                                <rect key="frame" x="110" y="40" width="105" height="30"/>
+                                                <state key="normal" title="Take Picture"/>
+                                                <connections>
+                                                    <action selector="changePicture:" destination="9pv-A4-QxB" eventType="touchUpInside" id="y3c-hZ-cPn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="215" id="IAr-TJ-PM2"/>
+                                            <constraint firstItem="TsZ-Ug-8MC" firstAttribute="top" secondItem="mmb-Ck-l8E" secondAttribute="top" constant="5" id="YA8-6G-KqQ"/>
+                                        </constraints>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6jI-CE-WQn">
                                         <rect key="frame" x="14" y="0.0" width="394" height="303.5"/>
                                         <subviews>
@@ -471,6 +494,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="6jI-CE-WQn" secondAttribute="bottom" constant="52.5" id="1Nx-rX-jma"/>
+                                    <constraint firstItem="mmb-Ck-l8E" firstAttribute="top" secondItem="7HM-Bz-VTF" secondAttribute="top" constant="310" id="2KH-70-b0w"/>
+                                    <constraint firstItem="mmb-Ck-l8E" firstAttribute="leading" secondItem="7HM-Bz-VTF" secondAttribute="leading" constant="15" id="E9o-R4-nku"/>
                                     <constraint firstItem="6jI-CE-WQn" firstAttribute="width" secondItem="ZDH-dk-lx3" secondAttribute="width" constant="-20" id="bwT-VT-5qG"/>
                                     <constraint firstAttribute="trailing" secondItem="6jI-CE-WQn" secondAttribute="trailing" id="c7e-4J-LWd"/>
                                     <constraint firstItem="6jI-CE-WQn" firstAttribute="top" secondItem="ZDH-dk-lx3" secondAttribute="top" id="k3W-uJ-FGt"/>
@@ -494,6 +519,7 @@
                     <navigationItem key="navigationItem" title="Contact" id="P2E-un-6Vh"/>
                     <connections>
                         <outlet property="btnChange" destination="EWL-uV-xQy" id="xqm-8d-DgV"/>
+                        <outlet property="imgContactPicture" destination="TsZ-Ug-8MC" id="k13-wX-33A"/>
                         <outlet property="lblBirthdate" destination="EX1-G1-rAc" id="WLF-70-lqb"/>
                         <outlet property="scrollView" destination="ZDH-dk-lx3" id="sAi-J4-Jzp"/>
                         <outlet property="sgmtEditMode" destination="9AL-5h-8Fh" id="GlN-d9-46c"/>
@@ -509,7 +535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2539" y="-342"/>
+            <point key="canvasLocation" x="2537.68115942029" y="-342.1875"/>
         </scene>
         <!--Birthdate-->
         <scene sceneID="IRn-54-axA">
@@ -640,16 +666,25 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJZ-N2-5an">
+                                <rect key="frame" x="372" y="44" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="uJZ-N2-5an" firstAttribute="top" secondItem="8Ep-0q-35M" secondAttribute="top" id="dnl-ow-TS3"/>
                             <constraint firstItem="qAZ-XM-Vae" firstAttribute="centerY" secondItem="omY-V3-NjW" secondAttribute="centerY" id="p0B-11-yOr"/>
+                            <constraint firstItem="8Ep-0q-35M" firstAttribute="trailing" secondItem="uJZ-N2-5an" secondAttribute="trailing" id="wN9-Fo-Hv6"/>
                             <constraint firstItem="qAZ-XM-Vae" firstAttribute="centerX" secondItem="omY-V3-NjW" secondAttribute="centerX" id="x6u-md-1VQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ep-0q-35M"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="sample-834-bolt" selectedImage="sample-834-bolt" id="XTD-sW-Wsy"/>
                     <connections>
+                        <outlet property="lblBattery" destination="uJZ-N2-5an" id="xNE-kT-FhC"/>
                         <outlet property="pckSortField" destination="ZAy-BN-mmi" id="mO7-e3-ss8"/>
                         <outlet property="swAscending" destination="cxE-Mn-rXv" id="qye-30-vM8"/>
                     </connections>

@@ -4,6 +4,10 @@
 <dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We need to know where we&apos;re at!</string>
+	<key>Privacy - Camera Usage Description Key</key>
+	<string>We need permission to access the camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need Permission to access photos</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

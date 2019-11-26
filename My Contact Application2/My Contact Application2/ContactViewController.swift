@@ -8,7 +8,9 @@
 import UIKit
 import CoreData
 
-class ContactViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate {
+class ContactViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
+    
     func dateChanged(date: Date) {
         if currentContact != nil {
             currentContact?.birthday = date as NSDate? as Date?
@@ -19,10 +21,12 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
             lblBirthdate.text = formatter.string(from: date)
         }
     }
+   
     
     var currentContact: Contact?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var imgContactPicture: UIImageView!
     @IBOutlet weak var sgmtEditMode: UISegmentedControl!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
@@ -35,12 +39,41 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
     @IBOutlet weak var txtPhone: UITextField!
     @IBOutlet weak var btnChange: UIButton!
     @IBOutlet weak var txtZip: UITextField!
+    
    
+    @IBAction func changePicture(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let cameraController = UIImagePickerController()
+            cameraController.sourceType = .camera
+            cameraController.cameraCaptureMode = .photo
+            cameraController.delegate = self
+            cameraController.allowsEditing = true
+            self.present(cameraController, animated: true, completion: nil)
+        }
+    }
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            imgContactPicture.contentMode = .scaleAspectFit
+            imgContactPicture.image = image
+            
+            if currentContact == nil {
+                let context =
+                    appDelegate.persistentContainer.viewContext
+                currentContact = Contact(context: context)
+            }
+            currentContact?.image=NSData(data:
+                image.jpegData(compressionQuality: 1.0)!) as Data
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+  
         
         if currentContact != nil {
                txtName.text = currentContact!.contactName
@@ -57,7 +90,11 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
                 lblBirthdate.text = formatter.string(from: currentContact!.birthday!)
                    
                }
+            if let imageData = currentContact?.image {
+            imgContactPicture.image = UIImage(data: imageData)
+            }
            }
+        
            changeEditMode(self)
            
            let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip,
@@ -66,6 +103,19 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
         for textField in textFields {
             textField.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)),
                                 for: UIControl.Event.editingDidEnd)
+        }
+        //let longPress = UILongPressGestureRecognizer.init(target: self,
+                                                          //  action: #selector(callPhone(gesture:)))
+          //lblPhone.addGestureRecognizer(longPress)
+    }
+    @objc func callPhone(gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            let number = txtPhone.text
+            if number!.count > 0 {
+                let url = NSURL(string: "telprompt://\(number!)")
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+                print("Calling Phone Number: \(url!)")
+            }
         }
     }
     
@@ -124,7 +174,6 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
         appDelegate.saveContext()
         sgmtEditMode.selectedSegmentIndex = 0
         changeEditMode(self)
-        
         }
     
      func registerKeyboardNotifications() {
@@ -167,9 +216,5 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
         let dateController = segue.destination as! DateViewController
         dateController.delegate = self
         }
-        
-      
-            }
+        }
     }
-
-
